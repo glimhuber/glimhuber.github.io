@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>CIV-LineasInfluencia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Dile al navegador que responda al ancho de la pantalla -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="icon" href="assets/imagenes/logoli.png">
+  <link rel="stylesheet" href="assets/css/dec.css">
+    <script src="assets/sweet/sweetalert2.all.min.js"></script>
+    <!-- https://github.com/MikeMcl/decimal.js-light/ https://iconscout.com/icons/print-->
+    <script src="assets/js/decimal.js"></script>
+</head>
+<body onload="run()">
+  <div class="contenedor" id="contenedor">
+    <div>
+        <div class="contenedor">
+            <img src="assets/imagenes/title.png" alt="Responsive image" height="70">
+            <div class="titulo">LINEAS DE INFLUENCIA</div>
+            <img src="assets/imagenes/title.png" alt="Responsive image" height="70">
+        </div>
+        <div class="contenedor">
+            <label class="labelVC">
+                <div>Número de tramos:</div>
+                <div class="contenedor">
+                    <input type="number" class="inputVC" id="NumTramos" 
+                    onkeyup="NumeroTramos()" 
+                    onclick="NumeroTramos()" min="1" pattern="^[0-9]+">
+                </div>
+            </label>
+            &nbsp;
+            <label class="labelVC">
+                <div class="contenedor" id="AlturaViga">
+                </div>
+            </label>
+            &nbsp;
+            <label class="labelVC">
+                <div class="contenedor" id="tablaTramo">
+                </div>
+            </label>
+        </div>
+        <div class="contenedor">
+            <label class="labelVC">
+                <table>
+                    <tbody id="resultadoTramos">
+                    </tbody>
+                </table>
+            </label>
+        </div>
+        <div class="contenedor">
+            <input type="radio" id="l" onclick="buscarTabla(id)" name="cartela">
+            <label for="l">&nbsp;Cartela Lineal</label>
+            &nbsp;&nbsp;&nbsp;
+            <input type="radio" id="p" onclick="buscarTabla(id)" name="cartela">
+            <label for="p">&nbsp;Cartela Parabólica</label>
+        </div>
+        <div class="contenedor">
+            <label class="labelVC">
+                <table>
+                    <tbody id="factores">
+                        <tr><td>Factores</td><td>tablaX</td><td>tablaX</td></tr>
+                        <tr><td>de Rigidez</td><td>n</td><td>n</td></tr>
+                        <tr><td>de Transporte</td><td>n</td><td>n</td></tr>
+                        <tr><td>Rigidez Modif.</td><td>n</td><td>n</td></tr>
+                    </tbody>
+                </table>
+            </label>
+        </div>
+        <div class="contenedor">
+            <label class="labelVC">
+                <table>
+                    <tbody id="rigidezModif">
+                        <tr><td>Rigidez Modif.</td><td>tramoN</td></tr>
+                    </tbody>
+                </table>
+            </label>
+        </div>
+    </div>
+  </div>
+   <script src="assets/js/lini.js"></script>
+</body>
+</html>
